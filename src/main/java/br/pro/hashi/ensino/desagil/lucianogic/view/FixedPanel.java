@@ -3,7 +3,6 @@ package br.pro.hashi.ensino.desagil.lucianogic.view;
 import java.awt.Component;
 import java.awt.Dimension;
 
-import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
 public class FixedPanel extends JPanel {

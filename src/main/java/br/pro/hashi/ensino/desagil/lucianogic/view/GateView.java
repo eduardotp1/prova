@@ -100,8 +100,9 @@ public class GateView extends FixedPanel implements ItemListener {
 		switches[i].setOn(inBoxes[i].isSelected());
 
 		outBox[0].setSelected(gate.read(0));
+		if(outBox.length>1){
 		outBox[1].setSelected(gate.read(1));
-		
+		}
 	}
 
 
