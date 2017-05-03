@@ -35,7 +35,9 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 	private Gate gate;
 
 	private LED led;
+	private LED led2;
 	private JButton ledButton = new JButton();
+	private JButton ledButton2 = new JButton();
 	private Color color;
 
 
@@ -45,12 +47,14 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 		this.gate = gate;
 
 		led = new LED(255,0,0);
+		led2 = new LED(255,0,0);
 		
 		color = new Color(led.getR(),led.getG(),led.getB());
 		
 	    ledButton.setBorder(new RoundedBorder(50));
 	    ledButton.addActionListener(this);
-	    
+	    ledButton2.setBorder(new RoundedBorder(50));
+	    ledButton2.addActionListener(this);
 	    
 		image = loadImage(gate.toString());
 
@@ -97,7 +101,7 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 				outBox[0].setEnabled(false);
 				outBox[1].setEnabled(false);
 				add(ledButton, 184, 65, 20, 20);
-				add(ledButton, 184, 100, 20, 20);
+				add(ledButton2, 184, 100, 20, 20);
 //				add(outBox[0], 184, 65, 20, 20);
 //				add(outBox[1], 184, 100, 20, 20);				
 //				outBox[0].setSelected(gate.read(0));
@@ -105,7 +109,6 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 				
 			}			
 			led.connect(gate, 0);
-			System.out.println(led.isOn());
 		
 			ledButton.setEnabled(led.isOn());
 			if(led.isOn()){
@@ -113,9 +116,18 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 			else {
 				makeColorGray ();
 				}
-		}
 			
+			led2.connect(gate, 0);
+		
+			ledButton2.setEnabled(led2.isOn());
+			if(led2.isOn()){
+				   ledButton2.setBackground(color); }
+			else {
+				makeColorGray ();
+				}
+		}
 	}
+
 
 	public void makeColorGray(){
 		led.setR(220);
