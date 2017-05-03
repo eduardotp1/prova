@@ -27,6 +27,16 @@ public class LED implements Receiver {
 	public int getB() {
 		return b;
 	}
+	
+	public void setR(int red) {
+		this.r = red;
+	}
+	public void setG(int green) {
+		this.g=green;
+	}
+	public void setB(int blue) {
+		this.b=blue;
+	}
 
 
 	public boolean isOn() {
@@ -41,4 +51,7 @@ public class LED implements Receiver {
 		}
 		this.emitter = emitter;
 	}
+
+
+
 }
