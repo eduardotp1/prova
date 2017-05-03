@@ -36,6 +36,8 @@ public class HalfGate extends Gate {
 		}
 		return false;
 	}
+	
+	
 
 	@Override
 	protected void doConnect(Emitter emitter, int index) {

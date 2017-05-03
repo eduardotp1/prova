@@ -50,6 +50,7 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 		led2 = new LED(255,0,0);
 		
 		color = new Color(led.getR(),led.getG(),led.getB());
+		color = new Color(led2.getR(),led2.getG(),led2.getB());
 		
 	    ledButton.setBorder(new RoundedBorder(50));
 	    ledButton.addActionListener(this);
@@ -117,7 +118,7 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 				makeColorGray ();
 				}
 			
-			led2.connect(gate, 0);
+			led2.connect(gate, 1);
 		
 			ledButton2.setEnabled(led2.isOn());
 			if(led2.isOn()){
@@ -153,6 +154,14 @@ public class GateView extends FixedPanel implements ItemListener, ActionListener
 		}else{
 			this.makeColorGray();
 		}
+		
+		led.connect(gate, 0);
+		if(led.isOn()==true){
+			ledButton.setBackground(color);
+		}else{
+			this.makeColorGray();
+		}
+		
 		
 		outBox[0].setSelected(gate.read(0));
 		if(outBox.length>1){

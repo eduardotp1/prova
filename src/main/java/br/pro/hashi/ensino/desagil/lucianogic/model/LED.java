@@ -46,12 +46,6 @@ public class LED implements Receiver {
 
 	@Override
 	public void connect(Emitter emitter, int index) {
-		if(index != 0) {
-			throw new IndexOutOfBoundsException();
-		}
 		this.emitter = emitter;
 	}
-
-
-
 }
